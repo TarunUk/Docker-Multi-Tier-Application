@@ -1,25 +1,21 @@
 # Docker Containerization of Multi-Tier Application
 
 ## 📌 Project Overview
-This project demonstrates how to build and run a **Multi-Tier Web Application** using **Docker** and **Docker Compose**.
+This project demonstrates a containerized multi-tier web application using Docker, Docker Compose, and GitHub Actions CI workflow.
 
-The application is divided into 3 separate containers:
+The application contains:
 
-- **Frontend** → HTML, CSS, JavaScript served using Nginx  
-- **Backend** → Node.js + Express API  
-- **Database** → MySQL  
+- Frontend → HTML, CSS, JavaScript with Nginx
+- Backend → Node.js + Express API
+- Database → MySQL
 
-All services communicate with each other using Docker Compose networking.
+All services communicate using Docker Compose networking.
 
 ---
 
 ## 🏗️ Architecture
 
 Frontend → Backend API → MySQL Database
-
-- Frontend runs on browser
-- Backend handles API requests
-- MySQL stores database data
 
 ---
 
@@ -33,6 +29,7 @@ Frontend → Backend API → MySQL Database
 - MySQL
 - Docker
 - Docker Compose
+- GitHub Actions
 - Nginx
 
 ---
@@ -51,6 +48,10 @@ multi-tier-app/
 │   ├── package.json
 │   └── Dockerfile
 │
+│── .github/
+│   └── workflows/
+│       └── docker.yml
+│
 │── docker-compose.yml
 │── .gitignore
 │── README.md
@@ -62,17 +63,18 @@ multi-tier-app/
 ✅ Frontend containerized using Nginx  
 ✅ Backend API containerized using Node.js  
 ✅ MySQL database containerized  
-✅ Docker Compose used for orchestration  
-✅ Port mapping configured  
-✅ Service-to-service communication enabled  
-✅ Easy local deployment with one command  
+✅ Docker Compose orchestration  
+✅ Container networking configured  
+✅ Port mapping enabled  
+✅ One-command deployment using Docker Compose  
+✅ GitHub Actions CI workflow automation  
 
 ---
 
 ## ⚙️ Setup & Run Project
 
-### 1️⃣ Clone Repository
+### Clone Repository
 
 ```bash
 git clone <repository-url>
-cd multi-tier-app
+cd Docker-Multi-Tier-Application
