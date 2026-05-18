@@ -1,7 +1,7 @@
 # Docker Containerization of Multi-Tier Application
 
 ## 📌 Project Overview
-This project demonstrates a containerized multi-tier web application using Docker, Docker Compose, and GitHub Actions CI workflow.
+This project demonstrates a containerized multi-tier web application using Docker, Docker Compose, GitHub Actions CI workflow, and AWS EC2 deployment.
 
 The application contains:
 
@@ -9,7 +9,7 @@ The application contains:
 - Backend → Node.js + Express API
 - Database → MySQL
 
-All services communicate using Docker Compose networking.
+All services communicate using Docker Compose networking and are deployed on AWS EC2.
 
 ---
 
@@ -30,6 +30,7 @@ Frontend → Backend API → MySQL Database
 - Docker
 - Docker Compose
 - GitHub Actions
+- AWS EC2
 - Nginx
 
 ---
@@ -66,8 +67,9 @@ multi-tier-app/
 ✅ Docker Compose orchestration  
 ✅ Container networking configured  
 ✅ Port mapping enabled  
-✅ One-command deployment using Docker Compose  
 ✅ GitHub Actions CI workflow automation  
+✅ AWS EC2 cloud deployment  
+✅ Public browser access using EC2 public IP  
 
 ---
 
