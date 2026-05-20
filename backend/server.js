@@ -21,7 +21,7 @@ db.connect((err) => {
 });
 
 app.get("/api", (req, res) => {
-  res.send("Hello from Docker Multi-Tier App 🚀");
+  res.send("Hello from Dockerized Node.js Backend🚀");
 });
 
 app.listen(5000, () => {
