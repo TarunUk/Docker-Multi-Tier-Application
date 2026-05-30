@@ -1,11 +1,151 @@
-<h1>Docker Multi-Tier Application</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Docker Multi-Tier App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
 
-<p>
-This project demonstrates containerization using Docker and Docker Compose.
-</p>
+  <!-- Animated background grid -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
 
-<button onclick="getData()">Get Backend Data</button>
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
 
-<h2 id="result"></h2>
+  <div class="container">
 
-<script src="script.js"></script>
+    <!-- Header -->
+    <header class="header">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        LIVE SYSTEM
+      </div>
+      <h1 class="title">
+        <span class="title-docker">Docker</span>
+        <span class="title-multi">Multi-Tier</span>
+        <span class="title-app">Application</span>
+      </h1>
+      <p class="subtitle">Containerized architecture · Full-stack orchestration · Real-time API bridge</p>
+    </header>
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-icon">⬡</span>
+        <div>
+          <div class="stat-value" id="stat-containers">3</div>
+          <div class="stat-label">Containers</div>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-icon">◈</span>
+        <div>
+          <div class="stat-value" id="stat-uptime">99.9%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-icon">⬢</span>
+        <div>
+          <div class="stat-value" id="stat-latency">--ms</div>
+          <div class="stat-label">Latency</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture diagram -->
+    <div class="arch-diagram">
+      <div class="arch-node frontend-node">
+        <div class="arch-node-icon">🌐</div>
+        <div class="arch-node-label">Frontend</div>
+        <div class="arch-node-sub">Nginx · Port 80</div>
+      </div>
+      <div class="arch-arrow">
+        <div class="arch-arrow-line">
+          <div class="arch-arrow-pulse"></div>
+        </div>
+        <span>REST API</span>
+      </div>
+      <div class="arch-node backend-node">
+        <div class="arch-node-icon">⚙️</div>
+        <div class="arch-node-label">Backend</div>
+        <div class="arch-node-sub">Flask · Port 5000</div>
+      </div>
+      <div class="arch-arrow">
+        <div class="arch-arrow-line">
+          <div class="arch-arrow-pulse"></div>
+        </div>
+        <span>TCP</span>
+      </div>
+      <div class="arch-node db-node">
+        <div class="arch-node-icon">🗄️</div>
+        <div class="arch-node-label">Database</div>
+        <div class="arch-node-sub">Redis · Port 6379</div>
+      </div>
+    </div>
+
+    <!-- API Panel -->
+    <div class="api-panel">
+      <div class="api-panel-header">
+        <div class="api-endpoint">
+          <span class="method-badge">GET</span>
+          <span class="endpoint-url">localhost:5000<span class="endpoint-path">/api</span></span>
+        </div>
+        <div class="api-status" id="api-status">
+          <span class="status-dot idle"></span>
+          <span class="status-text">Ready</span>
+        </div>
+      </div>
+
+      <button class="fetch-btn" id="fetchBtn" onclick="getData()">
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">Execute Request</span>
+        <div class="btn-ripple"></div>
+      </button>
+
+      <div class="response-box" id="responseBox">
+        <div class="response-header">
+          <span class="response-label">RESPONSE</span>
+          <span class="response-time" id="responseTime"></span>
+          <span class="copy-btn" id="copyBtn" onclick="copyResult()" title="Copy">⧉ Copy</span>
+        </div>
+        <div class="response-body">
+          <pre id="result" class="response-content">// Hit "Execute Request" to call the backend API</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Log terminal -->
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <span class="terminal-title">docker logs — live output</span>
+        <span class="clear-btn" onclick="clearLog()">clear</span>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="log-line"><span class="log-time">00:00:00</span><span class="log-info">[INFO]</span> System initialized — waiting for requests</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>Built with Docker · Flask · Nginx</span>
+      <span class="footer-sep">◆</span>
+      <span>Docker Compose Orchestration</span>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
